@@ -1,0 +1,278 @@
+/*|--- -- ---- -- ---|*/
+/*|--- -- MENU -- ---|*/
+/*|--- -- ---- -- ---|*/
+
+header{
+    width: 100vw;
+    background-color: #000;
+    height: 8vh;
+    position: fixed;
+    top: 0;
+    z-index: 2;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.menu{
+    width: 60%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 100000;
+}
+
+nav{
+    display: flex;
+}
+
+nav ul{
+    display: flex;
+    list-style: none;
+    margin-right: 40px;
+}
+
+nav li{
+    margin: 0 30px;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+nav a{
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    color: #fff;
+}
+
+.logo{
+    width: 40%;
+    height: 100%;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    float: left;
+}
+
+.logo a{
+    text-decoration: none;
+    color: #fff;
+}
+
+.logo h1{
+    font-size: 28px;
+}
+
+.logo span{
+    background: linear-gradient(180deg, rgba(98,0,255,1) 0%, rgba(164,0,255,1) 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;  
+}
+
+/*|--- -- --------------- -- ---|*/
+/*|--- -- ANIMATION MUSIC -- ---|*/
+/*|--- -- --------------- -- ---|*/
+
+.music{
+    width: 30px;
+    height: 30px;
+    display: inline-block;
+}
+
+.music div{
+    background: #fff;
+    height: 3px;
+    float: left;
+    margin: 1px;
+
+    animation-duration: .8s;
+    animation-iteration-count: infinite;
+}
+
+
+a:hover .music div{
+    background: linear-gradient(90deg, rgba(98,0,255,1) 0%, rgba(164,0,255,1) 100%);
+}
+
+/*|--- -- HOVER MUSIC CHILD 1 -- ---|*/
+
+.music div:nth-child(1){
+    width: 14px;
+}
+
+a:hover .music div:nth-child(1){
+    animation-name: move1;
+}
+
+@keyframes move1 {
+    0%{
+        width: 14px;
+    }
+    50%{
+        width: 20px;
+        background: linear-gradient(90deg, rgba(98,0,255,1) 0%, rgba(164,0,255,1) 37%);
+    }
+    100%{
+        width: 14px;
+    }
+}
+
+/*|--- -- HOVER MUSIC CHILD 2 -- ---|*/
+
+.music div:nth-child(2){
+    width: 20px;
+}
+
+a:hover .music div:nth-child(2){
+    animation-name: move2;
+    animation-delay: .1s;
+}
+
+@keyframes move2 {
+    0%{
+        width: 20px;
+    }
+    50%{
+        width: 14px;
+        background: linear-gradient(90deg, rgba(98,0,255,1) 0%, rgba(164,0,255,1) 37%);
+    }
+}
+
+/*|--- -- HOVER MUSIC CHILD 3 -- ---|*/
+
+.music div:nth-child(3){
+    width: 24px;
+}
+
+a:hover .music div:nth-child(3){
+    animation-name: move3;
+    animation-delay: .2s;
+}
+
+@keyframes move3 {
+    0%{
+        width: 24px;
+    }
+    50%{
+        width: 18px;
+        background: linear-gradient(90deg, rgba(98,0,255,1) 0%, rgba(164,0,255,1) 37%);
+    }
+}
+
+/*|--- -- HOVER MUSIC CHILD 4 -- ---|*/
+
+.music div:nth-child(4){
+    width: 16px;
+}
+
+a:hover .music div:nth-child(4){
+    animation-name: move1;
+    animation-delay: .1s;
+}
+
+/*|--- -- HOVER MUSIC CHILD 5 -- ---|*/
+
+.music div:nth-child(5){
+    width: 23px;
+}
+
+a:hover .music div:nth-child(5){
+    animation-name: move5;
+    animation-delay: .4s;
+}
+
+@keyframes move5 {
+    0%{
+        width: 23px;
+    }
+    50%{
+        width: 16px;
+        background: linear-gradient(90deg, rgba(98,0,255,1) 0%, rgba(164,0,255,1) 37%);
+    }
+}
+
+/*|--- -- HOVER MUSIC CHILD 6 -- ---|*/
+
+.music div:nth-child(6){
+    width: 19px;
+}
+
+a:hover .music div:nth-child(6){
+    animation-name: move6;
+    animation-delay: .3s;
+}
+
+@keyframes move6 {
+    0%{
+        width: 19px;
+    }
+    50%{
+        width: 10px;
+        background: linear-gradient(90deg, rgba(98,0,255,1) 0%, rgba(164,0,255,1) 37%);
+    }
+}
+
+/*|--- -- ---------- -- ---|*/
+/*|--- -- RESPONSIVE -- ---|*/
+/*|--- -- ---------- -- ---|*/
+
+@media screen and (max-width: 1080px) {
+    nav li{
+        margin: 0 10px;
+    }
+}
+
+@media screen and (max-width: 900px){
+    nav ul{
+        margin: 10px 0;
+    }
+}
+
+@media screen and (max-width: 800px) {
+    header{
+        height: auto;
+        display: block;
+    }
+    
+    .logo{
+        margin-top: 10px;
+        width: 100%;
+        height: 55%;
+    }
+
+    .menu{
+        width: 100%;
+        height: 45%;
+    }
+}
+
+@media screen and (max-width: 530px) {
+    nav a{
+        font-size: 15px;
+    }
+
+    nav ul{
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        margin: 5px 0;
+    }
+
+    nav li{
+        margin: 0 5px;
+    }
+}
+
+@media screen and (max-width: 440px) {
+    header{
+        height: auto;
+    }
+
+    nav a{
+        margin: 5px 0;
+    }
+}

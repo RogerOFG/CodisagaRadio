@@ -1,0 +1,803 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!--Anuncios GOOGLE-->
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7916058243560811" crossorigin="anonymous"></script>
+
+    <!-- Linkeado -->
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/glider-js@1.7.3/glider.min.css">
+
+    <link rel="stylesheet" href="public/css/menu.css">
+    <link rel="stylesheet" href="public/css/style.css">
+    <link rel="stylesheet" href="public/css/loader.css">
+    <link rel="stylesheet" href="public/css/flexslider.css">
+    <link rel="stylesheet" href="public/css/footer.css">
+
+    <!-- Scripts -->
+    <script src="public/js/radio.js"></script>
+
+    <!-- Scripts del Slider -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js"></script>
+    <script src="public/js/jquery.flexslider.js"></script>
+    <script>
+		$(window).load(function() {
+			$('.flexslider').flexslider({
+				touch: true,
+				pauseOnAction: false,
+				pauseOnHover: false,
+			});
+		});
+	</script>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Dosis:wght@300&display=swap" rel="stylesheet">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Dekko&family=Rubik:wght@300&family=Tillana&display=swap" rel="stylesheet">
+
+    <!-- link del icono -->
+    <link rel="icon" href="public/img/Programas/radio.jpg">
+
+    <!-- Linkeado de Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <title>CODISAGA RADIO</title>
+</head>
+
+<body>
+
+    <div class="pre-loader" id="pre-loader">
+        <div class="loader">
+            <svg viewBox="0 0 80 80">
+                <circle id="test" cx="40" cy="40" r="32"></circle>
+            </svg>
+        </div>
+        
+        <div class="loader triangle">
+            <svg viewBox="0 0 86 80">
+                <polygon points="43 8 79 72 7 72"></polygon>
+            </svg>
+        </div>
+        
+        <div class="loader">
+            <svg viewBox="0 0 80 80">
+                <rect x="8" y="8" width="64" height="64"></rect>
+            </svg>
+        </div>
+    </div>
+
+    <header>
+
+        <div class="logo">
+            <a href="/CODISAGA">
+                <h1>CODISAGA <span>99.3 FM</span> </h1>
+            </a>
+        </div>
+        <div class="menu">
+            <nav>
+                <ul>
+                    <li>
+                        <a href="#noticias">
+                            <div class="music">
+                                <div></div>
+                                <div></div>
+                                <div></div>
+                                <div></div>
+                                <div></div>
+                                <div></div>
+                            </div>
+                            NOTICIAS
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#programas">
+                            <div class="music">
+                                <div></div>
+                                <div></div>
+                                <div></div>
+                                <div></div>
+                                <div></div>
+                                <div></div>
+                            </div>
+                            PROGRAMAS
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#programacion">
+                            <div class="music">
+                                <div></div>
+                                <div></div>
+                                <div></div>
+                                <div></div>
+                                <div></div>
+                                <div></div>
+                            </div>
+                            PROGRAMACIÓN
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#nosotros">
+                            <div class="music">
+                                <div></div>
+                                <div></div>
+                                <div></div>
+                                <div></div>
+                                <div></div>
+                                <div></div>
+                            </div>
+                            NOSOTROS
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <div class="modal-boton">
+        <div class="box-radio">
+            <div class="radio">
+                <div id="player">
+                    <img src="#" alt="#" class="cover" id="art" />
+                    <div class="trackinfo">
+                        <p id="title"></p>
+                        <p id="artist"></p>
+                    </div>
+                    <div id="track">
+                        <div id="progress"></div>
+                        <div id="handler"></div>
+                    </div>
+                    <div class="container">
+                        <div class="info">
+                            <div class="cont">
+
+                                <button id="play" class="nav">
+                                    <img class="pad" alt="#" src="public/img/boton-de-play.png" />
+                                </button>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="modal">
+                <div class="modal-container" style="z-index: 1000;">
+                    <img src="public/img/App_Codisaga.png" alt="">
+                </div>
+                <div class="msg">
+                    <h5>Descarga nuestra App CODISAGA!</h5>
+                    <p>(Dale click a la imagen)</p>
+                </div>
+            </div>
+        </div>
+        <div class="modal-btn">
+            <i class="fa-solid fa-bars-staggered" style="margin-right: 5px; font-size: 22px;"></i>
+        </div>
+    </div>
+
+    <script>
+        document.querySelectorAll(".modal-boton .modal-btn").forEach(el=>{
+            el.addEventListener("click", function(ev){
+                ev.stopPropagation();
+                this.parentNode.classList.toggle("move2");
+            })
+        })
+    </script>
+
+    <main>
+
+        <div class="flexslider">
+            <ul class="slides">
+                <li>
+                    <img src="public/img/Programas/radio.jpg" alt="...">
+                    <section class="flex-caption">
+                        <h2>CODISAGA RADIO</h2>
+                    </section>
+                </li>
+                <li>
+                    <img src="public/img/Programas/tropa_wicho.jpg" alt="...">
+                    <section class="flex-caption">
+                        <h2>CODISAGA RADIO</h2>
+                    </section>
+                </li>
+                <li>
+                    <img src="public/img/fiesta.jpg" alt="...">
+                    <section class="flex-caption">
+                        <h2>CODISAGA RADIO</h2>
+                    </section>
+                </li>
+            </ul>
+            <svg xmlns="http://www.w3.org/2000/svg" style="position: absolute; bottom: 0; z-index: 3;" viewBox="0 0 1440 320">
+                <path fill="#e0e0e0" fill-opacity="1"
+                    d="M0,128L60,138.7C120,149,240,171,360,186.7C480,203,600,213,720,202.7C840,192,960,160,1080,149.3C1200,139,1320,149,1380,154.7L1440,160L1440,320L1380,320C1320,320,1200,320,1080,320C960,320,840,320,720,320C600,320,480,320,360,320C240,320,120,320,60,320L0,320Z">
+                </path>
+            </svg>
+        </div>
+
+        <div class="card-all" id="noticias">
+            <div class="box-all">
+                <h1>NOTICIAS</h1>
+                <div class="line"></div> <br>
+
+                <div class="notice" style="padding: 30px;">
+                    <div class="notice-title">
+                        <h2>Proceso de Matricula</h2>
+                    </div>
+
+                    <div class="notice-text">
+                        <p>Ya esta disponible el proceso de Matricula para los estudiantes de nuestro colegio IED San Gabriel, mas información siguiendo el boton de abajo.</p>
+                    </div>
+
+                    <div class="notice-button">
+                        <a class="button" href="https://drive.google.com/file/d/19tyXtZ2URD_ksvUQhbZzSJ3F7A50uI9P/view?usp=sharing" target="_blank">
+                            Seguir Link
+                        </a>
+                    </div>
+                </div>
+
+                <div class="notice" style="padding: 30px;">
+                    <div class="notice-title">
+                        <h2>Proximamente...</h2>
+                    </div>
+
+                    <div class="notice-text">
+                        <p>En esta seccion encontraras nuevos concursos de la radio en los que podras participar para ganar muchos premios. Recuerda estar atento a nuestras redes sociales, nos consigues como @Codisagaradio, no olvides que por alli estaremos anunciando nuestros concursos y actividades.</p>
+                    </div>
+        
+                    <!--<div class="notice-button">-->
+                    <!--    <a class="button" href="" target="_blank">-->
+                    <!--        Seguir Link-->
+                    <!--    </a>-->
+                    <!--</div>-->
+                    
+                </div>
+
+            </div>
+        </div>
+
+        <div class="card-all" id="programas">
+
+            <svg xmlns="http://www.w3.org/2000/svg" style="margin-bottom: -10px;" viewBox="0 0 1440 320">
+                <path fill="#00" fill-opacity="1" d="M0,224L80,234.7C160,245,320,267,480,256C640,245,800,203,960,192C1120,181,1280,203,1360,213.3L1440,224L1440,320L1360,320C1280,320,1120,320,960,320C800,320,640,320,480,320C320,320,160,320,80,320L0,320Z"></path>
+            </svg>
+
+            <div class="box-all">
+                <h1 class="box-title">Programas</h1>
+                <div class="line2"></div>
+
+                <div class="carousel">
+                    <div class="carousel__contenedor">
+                        <div class="carousel__lista">
+
+                            <!-- UME Historia y Ciencia -->
+                            <div class="carousel__elemento">
+                                <div class="card-card"> 
+                                    <div class="card-img">
+                                        <img src="public/img/Programas/UME.jpg" alt="CODISAGA RADIO">
+                                    </div>
+                                    <ul class="social-media">
+                                        <li>
+                                            <a href="https://bit.ly/3hLsvTP" target="_blank">
+                                                <em class="fa-brands fa-facebook-f" style="color: #ffffff;"></em>
+                                            </a>
+                                        </li>
+                                    </ul>
+                                    <div class="card-info">
+                                        <p class="title">UME Historia y Ciencia</p>
+                                        <p class="subtitle">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Cum, perferendis.</p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Guardianes del Pensamiento -->
+                            <div class="carousel__elemento">
+                                <div class="card-card"> 
+                                    <div class="card-img">
+                                        <img src="public/img/Programas/guardianes.jpg" alt="CODISAGA RADIO">
+                                    </div>
+                                    <ul class="social-media">
+                                        <li>
+                                            <a href="http://bit.ly/3Eviweb" target="_blank">
+                                                <em class="fa-brands fa-facebook-f" style="color: #ffffff;"></em>
+                                            </a>
+                                        </li>
+                                    </ul>
+                                    <div class="card-info">
+                                        <p class="title">Guardianes del Pensamiento</p>
+                                        <p class="subtitle">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Cum, perferendis.</p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- La Tropa de Wicho -->
+                            <div class="carousel__elemento">
+                                <div class="card-card">
+                                    <div class="card-img">
+                                        <img src="public/img/Programas/la-tropa-wicho.jpg" alt="CODISAGA RADIO">
+                                    </div>
+                                    <ul class="social-media">
+                                        <li>
+                                            <a href="https://bit.ly/3CtAEEd" target="_blank">
+                                                <i class="fa-brands fa-facebook-f" style="color: #ffffff;"></i>
+                                            </a>
+                                        </li>
+                                    </ul>
+                                    <div class="card-info">
+                                        <p class="title">La Tropa de Wicho</p>
+                                        <p class="subtitle">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Cum, perferendis.</p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- ZabioQ -->
+                            <div class="carousel__elemento">
+                                <div class="card-card">
+                                    <div class="card-img">
+                                        <img src="public/img/Programas/Zabioq.jpg" alt="CODISAGA RADIO">
+                                    </div>
+                                    <ul class="social-media">
+                                        <li>
+                                            <a href="http://bit.ly/3GjzEou" target="_blank">
+                                                <i class="fa-brands fa-facebook-f" style="color: #ffffff;"></i>
+                                            </a>
+                                        </li>
+                                    </ul>
+                                    <div class="card-info">
+                                        <p class="title">ZabioQ</p>
+                                        <p class="subtitle">Zona investigativa Bioquímica. Programa científico realizado por estudiantes del I.E.D San Gabriel</p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Notisaga Kids -->
+                            <div class="carousel__elemento">
+                                <div class="card-card">
+                                    <div class="card-img">
+                                        <img src="public/img/Programas/notisaga-kids.jpg" alt="CODISAGA RADIO">
+                                    </div>
+                                    <ul class="social-media">
+                                        <li>
+                                            <a href="https://bit.ly/3rtxZnQ" target="_blank">
+                                                <i class="fa-brands fa-facebook-f" style="color: #ffffff;"></i>
+                                            </a>
+                                        </li>
+                                    </ul>
+                                    <div class="card-info">
+                                        <p class="title">Notisaga Kids</p>
+                                        <p class="subtitle">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Cum, perferendis.</p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Club de Ciencias Investigativas -->
+                            <div class="carousel__elemento">
+                                <div class="card-card">
+                                    <div class="card-img">
+                                        <img src="public/img/Programas/club-ciencias.jpg" alt="CODISAGA RADIO">
+                                    </div>
+                                    <ul class="social-media">
+                                        <li>
+                                            <a href="http://bit.ly/3E489wq" target="_blank">
+                                                <i class="fa-brands fa-facebook-f" style="color: #ffffff;"></i>
+                                            </a>
+                                        </li>
+                                    </ul>
+                                    <div class="card-info">
+                                        <p class="title">Club de Ciencias Investigativas</p>
+                                        <p class="subtitle">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Cum, perferendis.</p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- NOTI-SICE -->
+                            <div class="carousel__elemento">
+                                <div class="card-card">
+                                    <div class="card-img">
+                                        <img src="public/img/Programas/noti-sice.jpg" alt="CODISAGA RADIO">
+                                    </div>
+                                    <ul class="social-media">
+                                        <li>
+                                            <a href="http://bit.ly/3Gi3HwX" target="_blank">
+                                                <i class="fa-brands fa-facebook-f" style="color: #ffffff;"></i>
+                                            </a>
+                                        </li>
+                                    </ul>
+                                    <div class="card-info">
+                                        <p class="title">NOTI-SICE</p>
+                                        <p class="subtitle">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Cum, perferendis.</p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Ambiente Codisaga -->
+                            <div class="carousel__elemento">
+                                <div class="card-card">
+                                    <div class="card-img">
+                                        <img src="public/img/Programas/ambiente.jpg" alt="CODISAGA RADIO">
+                                    </div>
+                                    <ul class="social-media">
+                                        <li>
+                                            <a href="http://bit.ly/3hyVdXK" target="_blank">
+                                                <i class="fa-brands fa-facebook-f" style="color: #ffffff;"></i>
+                                            </a>
+                                        </li>
+                                    </ul>
+                                    <div class="card-info">
+                                        <p class="title">Ambiente Codisaga</p>
+                                        <p class="subtitle">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Cum, perferendis.</p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Mente Abierta -->
+                            <div class="carousel__elemento">
+                                <div class="card-card"> 
+                                    <div class="card-img">
+                                        <img src="public/img/Programas/mente-abierta.jpg" alt="CODISAGA RADIO">
+                                    </div>
+                                    <ul class="social-media">
+                                        <li>
+                                            <a href="http://bit.ly/3X6PQPK" target="_blank">
+                                                <em class="fa-brands fa-facebook-f" style="color: #ffffff;"></em>
+                                            </a>
+                                        </li>
+                                    </ul>
+                                    <div class="card-info">
+                                        <p class="title">Mente Abierta</p>
+                                        <p class="subtitle">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Cum, perferendis.</p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Magazin Codisaga -->
+                            <div class="carousel__elemento">
+                                <div class="card-card">
+                                    <div class="card-img">
+                                        <img src="public/img/Programas/radio.jpg" alt="CODISAGA RADIO">
+                                    </div>
+                                    <ul class="social-media">
+                                        <li>
+                                            <a href="http://bit.ly/3tCHt0N" target="_blank">
+                                                <i class="fa-brands fa-facebook-f" style="color: #ffffff;"></i>
+                                            </a>
+                                        </li>
+                                    </ul>
+                                    <div class="card-info">
+                                        <p class="title">Magazin Codisaga</p>
+                                        <p class="subtitle">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Cum, perferendis.</p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Electro Urbans -->
+                            <div class="carousel__elemento">
+                                <div class="card-card"> 
+                                    <div class="card-img">
+                                        <img src="public/img/Programas/radio.jpg" alt="CODISAGA RADIO">
+                                    </div>
+                                    <ul class="social-media">
+                                        <li>
+                                            <a href="http://bit.ly/3XfgHtg" target="_blank">
+                                                <em class="fa-brands fa-facebook-f" style="color: #ffffff;"></em>
+                                            </a>
+                                        </li>
+                                    </ul>
+                                    <div class="card-info">
+                                        <p class="title">Electro Urbans</p>
+                                        <p class="subtitle">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Cum, perferendis.</p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Especiales Musicales -->
+                            <div class="carousel__elemento">
+                                <div class="card-card">
+                                    <div class="card-img">
+                                        <img src="public/img/Programas/especiales-musicales.jpg" alt="CODISAGA RADIO">
+                                    </div>
+                                    <ul class="social-media">
+                                        <li>
+                                            <a href="http://bit.ly/3UZfjsQ" target="_blank">
+                                                <i class="fa-brands fa-facebook-f" style="color: #ffffff;"></i>
+                                            </a>
+                                        </li>
+                                    </ul>
+                                    <div class="card-info">
+                                        <p class="title">Especiales Musicales</p>
+                                        <p class="subtitle">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Cum, perferendis.</p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Codisaga Radio -->
+                            <div class="carousel__elemento">
+                                <div class="card-card"> 
+                                    <div class="card-img">
+                                        <img src="public/img/Programas/radio.jpg" alt="CODISAGA RADIO">
+                                    </div>
+                                    <ul class="social-media">
+                                        <li>
+                                            <a href="https://bit.ly/3SUDo30" target="_blank">
+                                                <em class="fa-brands fa-facebook-f" style="color: #ffffff;"></em>
+                                            </a>
+                                        </li>
+                                    </ul>
+                                    <div class="card-info">
+                                        <p class="title">Codisaga Radio</p>
+                                        <p class="subtitle">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Cum, perferendis.</p>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                    <div role="tablist" class="carousel__indicadores"></div>
+                </div>
+
+            </div>
+
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320" style="margin-top: -1px;">
+                <path fill="#000" fill-opacity="1" d="M0,224L80,234.7C160,245,320,267,480,256C640,245,800,203,960,192C1120,181,1280,203,1360,213.3L1440,224L1440,0L1360,0C1280,0,1120,0,960,0C800,0,640,0,480,0C320,0,160,0,80,0L0,0Z"></path>
+            </svg>
+
+        </div>
+
+        <div class="card-progr" id="programacion">
+            <div class="progr-title">
+                <h1> PROGRAMACIÓN </h1>
+                <div class="line"></div>
+
+            </div>
+
+            <div class="progr-horario">
+                <div class="progr"> 
+                    <h2>LUNES</h2>
+
+                    <h3>UME HISTORIA Y CIENCIA</h3>
+                    <p>HORA: 3:00 PM</p>
+
+                    <h3>GUARDIANES DEL PENSAMIENTO</h3>
+                    <p>HORA: 5:00 PM</p>
+                </div>
+                <div class="progr">
+                    <h2>MARTES</h2>
+
+                    <h3>LA TROPA DE WICHO</h3>
+                    <p>HORA: 3:00 PM</p>
+
+                    <h3>ZABIOQ</h3>
+                    <p>HORA: 5:00 PM</p>
+                </div>
+                <div class="progr">
+                    <h2>MIERCOLES</h2>
+
+                    <h3>NOTISAGA KIDS</h3>
+                    <p>HORA: 3:00 PM</p>
+
+                    <h3>CLUB DE CIENCIAS INVESTIGATIVAS</h3>
+                    <p>HORA: 5:00 PM</p>
+                </div>
+                <div class="progr">
+                    <h2>JUEVES</h2>
+
+                    <h3>NOTI - SICE</h3>
+                    <p>HORA: 3:00 PM</p>
+
+                    <h3>AMBIENTE CODISAGA</h3>
+                    <p>HORA: 5:00 PM</p>
+                </div>
+                <div class="progr">
+                    <h2>VIERNES</h2>
+
+                    <h3>MENTE ABIERTA</h3>
+                    <p>HORA: 3:00 PM</p>
+
+                    <h3>MAGAZIN CODISAGA</h3>
+                    <p>HORA: 4:00 PM</p>
+
+                    <h3>ELECTRO URBANS</h3>
+                    <p>HORA: 5:00 PM</p>
+                </div>
+                <div class="progr">
+                    <h2 class="h2">ESPECIALES MUSICALES</h2>
+
+                    <h3>DE LUNES A VIERNES</h3>
+                    <p>4:00 PM</p>
+                </div>
+            </div>
+
+            <svg xmlns="http://www.w3.org/2000/svg" style="margin-bottom: -10px;" viewBox="0 0 1440 320">
+                <path fill="#f5f5f5" fill-opacity="1" d="M0,128L48,154.7C96,181,192,235,288,240C384,245,480,203,576,170.7C672,139,768,117,864,133.3C960,149,1056,203,1152,213.3C1248,224,1344,192,1392,176L1440,160L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"></path>
+            </svg>
+        </div>
+
+        <div class="card-uss" id="nosotros">
+            <div class="uss-title">
+                <h1> NOSOTROS </h1>
+                <div class="line"></div>
+            </div>
+
+            <div class="myv">
+                <div class="mision">
+                    <h2>MISION</h2>
+
+                    <p>Somos una emisora estudiantil encargada de mantener a la comunidad sangabrielista y sus alrededores informada, actualizada, conectada y unida a todo el quehacer academico, formativo, deportivo, social, cultural, ético y religioso a traves de programas, entrevistas, magazines, Noticieros, concursos y todo tipo escenarios de entretenimiento actual.</p>
+                </div>
+
+                <div class="vision">
+                    <h2>VISION</h2>
+
+                    <p>Lograr conectar a toda la comunidad sangabrielista y sus alrededores en un 100% y mejorar los procesos académicos e informativos de la institución a través de la emisora.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="expand move">
+            <div class="content">
+                <!-- Boton de Compartir -->
+                <button class="btn-cssbuttons">
+                    <span>Compartir</span><span>
+                        <svg height="18" width="18" xmlns="http://www.w3.org/2000/svg" version="1.1" viewBox="0 0 1024 1024"
+                            class="icon">
+                            <path fill="#ffffff"
+                                d="M767.99994 585.142857q75.995429 0 129.462857 53.394286t53.394286 129.462857-53.394286 129.462857-129.462857 53.394286-129.462857-53.394286-53.394286-129.462857q0-6.875429 1.170286-19.456l-205.677714-102.838857q-52.589714 49.152-124.562286 49.152-75.995429 0-129.462857-53.394286t-53.394286-129.462857 53.394286-129.462857 129.462857-53.394286q71.972571 0 124.562286 49.152l205.677714-102.838857q-1.170286-12.580571-1.170286-19.456 0-75.995429 53.394286-129.462857t129.462857-53.394286 129.462857 53.394286 53.394286 129.462857-53.394286 129.462857-129.462857 53.394286q-71.972571 0-124.562286-49.152l-205.677714 102.838857q1.170286 12.580571 1.170286 19.456t-1.170286 19.456l205.677714 102.838857q52.589714-49.152 124.562286-49.152z">
+                            </path>
+                        </svg>
+                    </span>
+                    <ul>
+                        <li>
+                            <a href="http://www.facebook.com/sharer.php?u=https://bit.ly/3CbhOBE" target="_blank">
+                                <i class="fa-brands fa-facebook-f"></i>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://api.whatsapp.com/send?text=Hey%20mani%20llegate%20a%20la%20mejor%20pagina%20de%20radio.%20CODISAGA%20RADIO%20https://bit.ly/3CbhOBE" target="_blank">
+                                <i class="fa-brands fa-whatsapp"></i>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://www.instagram.com/codisagaradio/" target="_blank">
+                                <i class="fa-brands fa-instagram"></i>
+                            </a>
+                        </li>
+                    </ul>
+                </button>   
+            </div>
+            <div class="btn">
+                <i class="fa-solid fa-share"></i>
+            </div>
+        </div>
+
+        <!-- Footer -->
+        <footer>
+
+            <div class="our-redes">
+                <span>Conéctese con nosotros atraves de nuestras redes sociales:</span>
+
+                <div class="redes">
+                    <a href="https://www.facebook.com/CODISAGARADIO" target="_blank"> <i class="fa-brands fa-facebook"></i> </a>
+                    <a href="https://www.instagram.com/CODISAGARADIO/" target="_blank"> <i class="fa-brands fa-instagram"></i> </a>
+                    <a href="https://www.youtube.com/channel/UCpfsVJONxFWFjOZScwkfs8g" target="_blank"> <i class="fa-brands fa-youtube"></i> </a>
+                    <a href="https://www.tiktok.com/@codisagaradio" target="_blank"> <i class="fa-brands fa-tiktok"></i> </a>
+                </div>
+            </div>
+
+            <div class="contacto">
+                <div>
+                    <img src="public/img/Programas/radio.jpg" alt="Logo Radio">
+                    <p>Nuestro objetivo es lograr conectar a toda la comunidad sangabrielista y sus alrededores en su totalidad y mejorar los procesos académicos e informativos de la institución a través de la emisora.</p>
+                </div>
+                <div>
+                    <h5> CONTACTANOS: </h5>
+                    <a onclick="location.href='mailto:codisagaradio@gmai.com'" style="cursor: pointer;"> <i class="fa-solid fa-envelope"></i> codisagaradio@gmai.com </a>
+                    <p> <i class="fa-solid fa-phone"></i> 320 4460705 </p>
+                    <a href="https://api.whatsapp.com/send?phone=573204460705" target="_blank"> <i class="fa-brands fa-whatsapp"></i> Mensaje al WhatsApp </a>
+                </div>
+                <div>
+                    <h5>UBICACIÓN:</h5>
+                    <a href="https://goo.gl/maps/Uvb7EqbeUsmfuLqZ6" target="_blank"> <i class="fa-solid fa-location-dot icon"></i> Cra. 19D #38 25, Barranquilla, Atlántico </a>
+                </div>
+            </div>
+
+            <div class="footer">
+                <p>
+                    © 2022 Codisaga Radio <br>
+                    Desarrollado por: <a href="https://rogerofg.github.io/MiPortafolio/" target="_blank"> Roger Florez Garcia </a> <br>
+                    - Esneider Echeverria y Jaime Rodríguez Segovia <br>
+                </p>
+            </div>
+        </footer>
+
+    </main>
+
+    <!-- Radio -->
+    <script>
+
+        var holding = false;
+        var track = document.getElementById('track');
+        var progress = document.getElementById('progress');
+        var play = document.getElementById('play');
+        var next = document.getElementById('next');
+        var prev = document.getElementById('prev');
+        var title = document.getElementById('title');
+        var artist = document.getElementById('artist');
+        var art = document.getElementById('art');
+        var current_track = 0;
+        var song, audio, duration;
+        var playing = false;
+        var songs = [{
+            title: 'Codisaga Radio',
+            artist: 'Colegio San Gabriel.',
+            url: 'https://sonic.paulatina.co/7394/stream',
+            art: 'public/img/Programas/radio.jpg'
+        }];
+
+        window.addEventListener('load', init(), false);
+
+        function init() {
+            song = songs[current_track];
+            audio = new Audio();
+            audio.src = song.url;
+            title.textContent = song.title;
+            artist.textContent = song.artist;
+            art.src = song.art;
+        }
+
+
+        audio.addEventListener('timeupdate', updateTrack, false);
+        audio.addEventListener('loadedmetadata', function () {
+            duration = this.duration;
+        }, false);
+        window.onmousemove = function (e) {
+            e.preventDefault();
+            if (holding) seekTrack(e);
+        }
+        window.onmouseup = function (e) {
+            holding = false;
+            console.log(holding);
+        }
+        track.onmousedown = function (e) {
+            holding = true;
+            seekTrack(e);
+            console.log(holding);
+        }
+        play.onclick = function () {
+            playing ? audio.pause() : audio.play();
+        }
+        audio.addEventListener("pause", function () {
+            play.innerHTML = '<img class="pad" src="public/img/boton-de-play.png" />';
+            playing = false;
+        }, false);
+
+        audio.addEventListener("playing", function () {
+            play.innerHTML = '<img src="public/img/pausa.png" />';
+            playing = true;
+        }, false);
+        next.addEventListener("click", nextTrack, false);
+        prev.addEventListener("click", prevTrack, false);
+
+    </script>
+
+    <!-- Pre loader -->
+    <script>
+        window.onload = function(){
+            $('#pre-loader').fadeOut();
+        }
+    </script>
+
+    <!-- Script -->
+
+    <script src="public/js/app.js"></script>
+    <script src="public/js/modal-img.js"></script>
+    <script src="public/js/menu-desplegable.js"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/glider-js@1.7.3/glider.min.js"></script>
+	<script src="https://kit.fontawesome.com/2c36e9b7b1.js" crossorigin="anonymous"></script>
+</body>
+</html>

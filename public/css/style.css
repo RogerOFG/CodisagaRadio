@@ -1,0 +1,853 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Rubik', sans-serif;
+    background: #e0e0e0;
+}
+
+/*--- -- ----- -- ---*/
+/*--- -- RADIO -- ---*/
+/*--- -- ----- -- ---*/
+
+.box-radio{
+    width: 40%;
+    height: 92vh;
+    position: fixed;
+    top: 8%;
+    left: 0;
+    z-index: 2;
+    background: radial-gradient(100% 225% at 100% 0%, #FF0000 0%, #000000 100%), linear-gradient(236deg, #5900ff 0%, #000000 100%), linear-gradient(135deg, #CDFFEB 0%, #CDFFEB 36%, #009F9D 36%, #009F9D 60%, #07456F 60%, #07456F 67%, #0F0A3C 67%, #0F0A3C 100%);
+    background-blend-mode: overlay, hard-light, normal;
+    transition: ease-in-out .3s;
+}
+
+.radio{
+    width: 100%;
+    height: 80%;
+}
+
+#player {
+    width: 401px;
+    height: 401px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 10%;
+    margin: auto;
+    border-radius: 50%;
+    background: #ebf3fa;
+    border: 1px solid #000000;
+}
+
+#player .cover {
+    width: 400px;
+    position: absolute;
+    top: 0px;
+    left: 0;
+    border-radius: 50%;
+}
+
+#player .container {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    overflow: hidden;
+}
+
+#player .info {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    height: 115px;
+    background-color: #FFF;
+}
+
+.info .cont {
+    text-align: center;
+    padding-top: 25px;
+}
+
+#player .trackinfo {
+    position: absolute;
+    bottom: 135px;
+    color: #FFF;
+}
+
+#player .trackinfo p {
+    text-shadow: 0px 0px 5px #333;
+}
+
+#player .trackinfo #title {
+    font-weight: bold;
+    font-size: 26px;
+    padding-left: 10px;
+    margin-bottom: 5px;
+}
+
+#player .trackinfo #artist {
+    padding-left: 25px;
+}
+
+#track {
+    width: 366px;
+    border-radius: 0 0 40px 0;
+    height: 5px;
+    position: absolute;
+    background-color: #A6A7A9;
+    bottom: 115px;
+    left: 17px;
+    z-index: 10;
+    cursor: pointer;
+}
+
+#progress {
+    float: left;
+    height: 5px;
+    width: 10%;
+    background: #000000;
+    cursor: pointer;
+}
+
+#handler {
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    background-color: #fff;
+    top: 50%;
+    left: 3%;
+    margin-left: -10px;
+    margin-top: -10px;
+    border-radius: 50%;
+    cursor: pointer;
+    z-index: 5;
+}
+
+.nav {
+    width: 50px;
+    height: 50px;
+    vertical-align: top;
+    background-color: #fff;
+    border: none;
+    outline: none;
+    margin: 0 7px;
+    cursor: pointer;
+}
+
+.nav img {
+    height: 50px;
+}
+
+/* .pad {
+    padding-left: 5px;
+} */
+
+#prev {
+    padding-right: 5px;
+}
+
+#next {
+    padding-left: 4px;
+}
+
+/*--- -- ----- -- ---*/
+/*--- -- MODAL -- ---*/
+/*--- -- ----- -- ---*/
+
+.modal{
+    position: relative;
+    width: 100%;
+    height: 20vh;
+}
+
+.modal-container.active{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+}
+
+.modal-container{
+    text-align: center;
+}
+
+.modal-container img{
+    z-index: 1000;
+    max-height: 10vh;
+    max-width: 10vw;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+.msg h5,
+.msg p{
+    text-align: center;
+    color: #FFF;
+    font-size: 14px;
+}
+
+.modal-container.active img{
+    max-width: 90vw;
+    max-height: 90vh;
+}
+
+.modal-container.active::after{
+    content: '';
+    position: fixed;
+    width: 100vw;
+    height: 100vh;
+    top: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, .5);
+    z-index: 100;
+}
+
+/*--- -- ---- -- ---*/
+/*--- -- MAIN -- ---*/
+/*--- -- ---- -- ---*/
+
+main{
+    width: 60%;
+    height: auto;
+    position: absolute;
+    right: 0;
+    top: 8%;
+}
+
+/*--- -- -------- -- ---*/
+/*--- -- NOTICIAS -- ---*/
+/*--- -- -------- -- ---*/
+
+.notice{
+    box-shadow: 8px 8px 20px gray;
+    width: 100%;
+    height: auto;
+    margin: 20px 0;
+    border-radius: 15px;
+}
+
+.notice-title{
+    height: auto;
+    text-align: left;
+    padding: 20px 15px 5px 25px;
+    text-transform: uppercase
+}
+
+.notice-text{
+    height: auto;
+    text-align: left;
+    padding: 5px 15px 10px 25px;
+    font-size: 16px;
+}
+
+.notice-button{
+    padding: 15px 0 20px 25px;
+}
+
+.notice-button .button{
+    width: 150px;
+    height: 30px;
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    border: none;
+    background-color: #4400ff;
+    color: #fff;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+/*--- -- --------- -- ---*/
+/*--- -- PROGRAMAS -- ---*/
+/*--- -- --------- -- ---*/
+
+.card-all{
+    position: relative;
+    width: 100%;
+    height: 100%;
+    padding: 0 10px 10px 10px;
+}
+
+.card-all:nth-child(3){
+    padding: 0;
+}
+
+.box-all:nth-child(2),
+.card-all:nth-child(1){
+    background-color: #000;
+    border-radius: inherit;
+    padding-bottom: 0;
+}
+
+.box-title:nth-child(1){
+    background-color: #000;
+    color: #fff;
+    padding-top: 10px;
+}
+
+.box-all{
+    width: 100%;
+    height: auto;
+    padding: 0 30px 30px 30px;
+    text-align: center;
+    margin: auto;
+    background: #e0e0e0;
+}
+
+.box-title{
+    padding-top: 60px;
+    z-index: 1;
+    background-color: #f5f5f5;
+    margin-bottom: 10px;
+}
+
+/*--- -- ----- -- ---*/
+/*--- -- CARDS -- ---*/
+/*--- -- ----- -- ---*/
+
+.card-card {
+    width: 350px;
+    height: 280px;
+    background: #f5f5f5;
+    position: relative;
+    box-shadow: 0px 2px 5px rgba(35, 35, 35, 0.3);
+    transition: box-shadow .3s ease-in-out;
+    border-radius: 24px;
+    margin: 0 auto 10px auto;
+    z-index: 1;
+}
+
+.card-info {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    padding: 1rem;
+    text-align: center;
+}
+
+/*Image*/
+.card-img {
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    transition: transform .3s ease-in-out;
+    z-index: 2;
+    border-radius: 20px;
+}
+
+.card-img img{
+    width: 100%;
+    height: 100%;
+    border-radius: 20px;
+}
+
+/*Buttons*/
+.social-media {
+    position: absolute;
+    bottom: 0;
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    padding: 0 1rem;
+    transform: translateY(-200%);
+    z-index: 3;
+}
+
+.social-media li {
+    background: #275efe;
+    color: #fff;
+    padding: 14px 19px;
+    border-radius: 50%;
+    cursor: pointer;
+    opacity: 0;
+    transition: all .3s ease-in;
+    margin: auto;
+}
+
+/*Text*/
+.title {
+    font-size: 1.4em;
+    font-weight: bolder;
+}
+
+.subtitle {
+    margin-top: 5px;
+    font-size: .95em;
+}
+
+ul {
+    list-style: none;
+}
+
+/* Hover */
+.card-card:hover {
+    box-shadow: 1px 2px 10px rgba(35, 35, 35, 0.5);
+}
+
+.card-card:hover .card-img {
+    border-radius: 20px 20px 0 0;
+    transform: translateY(-58%);
+}
+
+.card-card:hover img{
+    border-radius: 20px 20px 0 0;
+}
+
+.card-card:hover .social-media li {
+    transform: translateY(-15%);
+    /* transform: translateY(-160%); */
+    opacity: 1;
+    margin: auto;
+}
+
+/*--- -- ----------------- -- ---*/
+/*--- -- CARD-PROGRAMACION -- ---*/
+/*--- -- ----------------- -- ---*/
+
+.card-progr,
+.card-uss{
+    width: 100%;
+    height: auto;
+}
+
+.card-progr{
+    background-color: #e0e0e0;
+}
+
+.progr-title,
+.card-uss{
+    padding: 20px 0 10px 0;
+    text-align: center;
+}
+
+.progr-horario{
+    width: 98%;
+    height: auto;
+    margin: 30px auto;
+
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    grid-column-gap: 10px;
+    grid-row-gap: 10px;
+}
+
+.progr{
+    text-align: center;
+    border-radius: 20px;
+    /* box-shadow: 1px 1px 20px gray; */
+    /* box-shadow: 1px 1px 10px grey, 
+        -5px -5px 10px white; */
+}
+
+.progr h2{
+    background: linear-gradient(90deg, #7a00be 0%, #4b00c3 50%, #7a00be 100%);
+    color: #fff;
+    border-radius: 50px;
+    max-width: 180px;
+    padding: 10px 0;
+    margin: 30px auto;
+    font-size: 20px;
+}
+
+.progr h3{
+    margin: 0 0 10px 0;
+    font-size: 18px;
+}
+
+.progr p{
+    margin-bottom: 20px;
+    font-size: 17px;
+}
+
+/*--- -- ------------- -- ---*/
+/*--- -- CARD-NOSOTROS -- ---*/
+/*--- -- ------------- -- ---*/
+
+.card-uss{
+    background-color: #f5f5f5;
+}
+
+.myv{
+    padding: 70px 0;
+}
+
+.myv h2{
+    width: 180px;
+    padding: 10px 0;
+    border-radius: 50px;
+    margin: 20px auto;
+    color: #fff;
+    background: linear-gradient(90deg, #4b00c3 10%, #7a00be 50%, #4b00c3 90%);
+}
+
+.myv p{
+    width: 75%;
+    margin: 0 auto;
+    padding: 35px 25px;
+    border-radius: 10px;
+    box-shadow: 5px 5px 20px gray, 
+            -5px -5px 10px white;
+    font-size: 18px;
+}
+
+/*--- -- ----- -- ---*/
+/*--- -- SHARE -- ---*/
+/*--- -- ----- -- ---*/
+
+.btn-cssbuttons {
+    position: fixed;
+    bottom: 10px;
+    right: 0;
+    z-index: 1;
+    padding: 16px 32px;
+    font-family: Roboto, sans-serif;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 1;
+    color: white;
+    background: none;
+    border: none;
+    outline: none;
+    overflow: hidden;
+    cursor: pointer;
+    filter: drop-shadow(0 2px 8px rgba(39, 94, 254, 0.32));
+    transition: 0.3s cubic-bezier(0.215, 0.61, 0.355, 1);
+}
+
+.btn-cssbuttons::before {
+    position: absolute;
+    content: "";
+    top: 0;
+    left: 0;
+    z-index: -1;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(100% 225% at 100% 0%, #FAFF00 0%, #000000 100%), linear-gradient(235deg, #a200ff 10%, #000000 100%), linear-gradient(45deg, #241E92 0%, #241E92 40%, #5432D3 40%, #5432D3 50%, #7B6CF6 50%, #b8b4d6 70%, #7700ff 70%, #5900ff 100%), linear-gradient(180deg, #01024E 0%, #01024E 43%, #543864 43%, #543864 62%, #8B4367 62%, #8B4367 80%, #8400ff 80%, #FF6464 100%);
+    background-blend-mode: overlay, hard-light, overlay, normal;
+    border-radius: 24px 0 0 24px;
+    transition: 0.3s cubic-bezier(0.215, 0.61, 0.355, 1);
+}
+
+.btn-cssbuttons span,
+.btn-cssbuttons span span {
+    display: inline-flex;
+    vertical-align: middle;
+    transition: 0.3s cubic-bezier(0.215, 0.61, 0.355, 1);
+}
+
+.btn-cssbuttons span {
+    transition-delay: 0.05s;
+}
+
+.btn-cssbuttons span:first-child {
+    padding-right: 7px;
+}
+
+.btn-cssbuttons span span {
+    margin-left: 8px;
+    transition-delay: .1s;
+}
+
+.btn-cssbuttons ul {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    right: 0;
+    display: flex;
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+    transform: translateY(-50%);
+}
+
+.btn-cssbuttons ul li {
+    flex: 1;
+}
+
+.btn-cssbuttons ul li a {
+    display: inline-flex;
+    vertical-align: middle;
+    transform: translateY(55px);
+    transition: 0.3s cubic-bezier(0.215, 0.61, 0.355, 1);
+    color: #fff;
+    text-decoration: none;
+    height: 30px;
+    width: 100%;
+    margin: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 20px;
+}
+
+.btn-cssbuttons ul li a:hover {
+    opacity: 0.5;
+}
+
+.btn-cssbuttons:hover::before {
+    transform: scale(1.2);
+}
+
+.btn-cssbuttons:hover span,
+.btn-cssbuttons:hover span span {
+    transform: translateY(-55px);
+}
+
+.btn-cssbuttons:hover ul li a {
+    transform: translateY(0);
+}
+
+.btn-cssbuttons:hover ul li:nth-child(1) a {
+    transition-delay: 0.15s;
+}
+
+.btn-cssbuttons:hover ul li:nth-child(2) a {
+    transition-delay: 0.2s;
+}
+
+.btn-cssbuttons:hover ul li:nth-child(3) a {
+    transition-delay: 0.25s;
+}
+
+/*--- -- ---------- -- ---*/
+/*--- -- RESPONSIVE -- ---*/
+/*--- -- ---------- -- ---*/
+
+@media screen and (max-width: 1100px) {
+    #player {
+        width: 301px;
+        height: 301px;
+        margin-left: 0;
+        margin-top: 0;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        margin: auto;
+    }
+    
+    #player .cover {
+        width: 300px;
+    }
+
+    #player .info {
+        width: 300px;
+        height: 100px;
+    }
+
+    #player .trackinfo {
+        bottom: 110px;
+    }
+
+    #track {
+        width: 280px;
+        bottom: 100px;
+        left: 10px;
+    }
+}
+
+@media screen and (max-width: 1000px) {
+    .progr-horario{
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: repeat(3, 1fr);
+    }
+}
+
+@media screen and (max-width:800px){
+    main{
+        width: 100%;
+    }
+
+    .box-radio,
+    #player,
+    #player .cover,
+    #player .container {
+        border-radius: 0 50px 50px 0;
+    }
+
+    .box-radio{
+        top: inherit;
+        width: 240px;
+        height: 10vh;
+        left: -240px;
+        bottom: 50px;
+        position: fixed;
+        z-index: 2;
+    }
+
+    #player {
+        height: 160px;
+        width: 100%;
+        box-shadow:  none;
+        border: 1px solid gray;
+    }
+
+    #player .cover {
+        height: 100%;
+        width: 100%;
+    }
+
+    #player .info {
+        width: 100%;
+        height: 70px;
+    }
+
+    #player .trackinfo {
+        bottom: 78px;
+    }
+
+    #player .info .cont {
+        padding-top: 10px;
+    }
+
+    #track {
+        width: 230px;
+        left: 8px;
+        bottom: 70px;
+        border-radius: 0;
+    }
+
+    .modal{
+        visibility: hidden;
+    }
+
+    .btn-cssbuttons {
+        position: absolute;
+        bottom: 0;
+        top: 0;
+        left: -1px;
+    }
+
+    .btn-cssbuttons::before{
+        border-radius: 0 24px 24px 0;
+    }
+
+    .progr-horario{
+        grid-template-columns: repeat(3, 1fr);
+        grid-template-rows: repeat(2, 1fr);
+    }
+
+    .modal-boton{
+        width: 275px;
+        height: 140px;
+        background-color: #fff;
+        z-index: 2;
+        display: flex;
+        align-items: center;
+        justify-content: right;
+        position: fixed;
+        bottom: 4px;
+        left: -240px;
+        border-radius: 0 40px 40px 0;
+        cursor: pointer;
+    }
+
+    .modal-btn{
+        width: 100%;
+        height: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: right;
+    }
+
+    .move2 .box-radio{
+        left: 0;
+        transition: ease-in-out .3s;
+    }
+
+    .move2{
+        left: inherit;
+    }
+}
+
+@media screen and (max-width: 580px) {
+    .progr-horario{
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: repeat(3, 1fr);
+    }
+
+    .card-img {
+        transform: translateY(-58%);
+    }
+
+    .card-img,
+    .card-img img{
+        border-radius: 20px 20px 0 0;
+    }
+
+    .social-media li {
+        transform: translateY(128%);
+        opacity: 1;
+        margin: auto;
+    }
+
+    .card-card:hover .social-media li {
+        transform: translateY(128%);
+    }
+
+    .subtitle{
+        display: none;
+    }
+
+    .title{
+        margin-bottom: 25%;
+    }
+}
+
+@media screen and (max-width: 450px) {
+    .card-program{
+        padding: 0;
+    }
+
+    .box-all{
+        width: 100%;
+    }
+
+    .card-card {
+        width: 300px;
+        height: 220px;
+    }
+
+    .card-card:hover .social-media li {
+        transform: translateY(165%);
+    }
+
+    .social-media li {
+        transform: translateY(165%);
+    }
+
+    .title{
+        margin-bottom: 20%;
+    }
+}
+
+@media screen and (max-width: 370px) {
+    .card-img {
+        transform: translateY(-65%);
+    }
+
+    /* .social-media li {
+        transform: translateY(-60%);
+    } */
+
+    .progr-horario{
+        grid-template-columns: repeat(1, 1fr);
+    }
+}
